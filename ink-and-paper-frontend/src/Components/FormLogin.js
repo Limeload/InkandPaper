@@ -1,10 +1,16 @@
-import React from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import React, {useState} from 'react'
+import { Button, Form } from 'semantic-ui-react'
 import "./App.css"
 import logo from "../logo.png"
+import FormSignUp from './FormSignUp'
 
 function FormLogin({users, setUsers}) {
+  const [showForm, setShowForm] = useState(false);
+  function handleClickForm(){
+    setShowForm(!showForm);
+  }
      return (
+      <div>
   <Form className='App-login'>
     <img src={logo} alt="logo" />
     <Form.Field>
@@ -15,11 +21,12 @@ function FormLogin({users, setUsers}) {
       <label>Password</label>
       <input type="password" placeholder='Password' />
     </Form.Field>
-    <Form.Field>
-      <Checkbox label='I agree to the Terms and Conditions' />
-    </Form.Field>
     <Button type='submit'>Submit</Button>
+    <h3> or </h3>,
+  <Button onClick={handleClickForm}> Sign Up instead </Button>
+  {showForm ? <FormSignUp users={users} setUsers={setUsers} /> : null}
   </Form>
+  </div>
     )
 }
 
