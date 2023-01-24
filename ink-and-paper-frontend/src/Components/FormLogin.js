@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { Button, Form } from 'semantic-ui-react'
 import "./App.css"
-import logo from "../logo.png"
 import FormSignUp from './FormSignUp'
+import logo from "../logo.png"
 
 function FormLogin({users, setUsers}) {
   const [showForm, setShowForm] = useState(false);
@@ -12,7 +12,7 @@ function FormLogin({users, setUsers}) {
      return (
       <div>
   <Form className='App-login'>
-    <img src={logo} alt="logo" />
+    <img className='logo' src={logo} alt={logo} />
     <Form.Field>
       <label>Username</label>
       <input placeholder=' Username' />
