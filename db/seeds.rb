@@ -1,5 +1,61 @@
 puts "🌱 Seeding spices..."
+Author.destroy_all
+Book.destroy_all
+User.destroy_all
 
-# Seed your database here
+Author.create(first_name: "J.K.", last_name: "Rowling")
+Author.create(first_name: "Stephen", last_name: "King")
+Author.create(first_name: "Dan", last_name: "Brown")
+Author.create(first_name: "Stephenie", last_name: "Meyer")
+Author.create(first_name: "Sarah", last_name: "Maas")
+Author.create(first_name: "Charles", last_name: "Dickens")
+Author.create(first_name: "Mark", last_name: "Twain")
+Author.create(first_name: "Harper", last_name: "Lee")
+Author.create(first_name: "Ralph", last_name: "Ellison")
+Author.create(first_name: "Bill", last_name: "Bryson")
+
+
+Book.create(title: "Harry Potter and the Sorcerer's Stone", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "Harry Potter and the Chamber of Secrets", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "Harry Potter and the Prisoner of Azkaban", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "Harry Potter and the Goblet Fire", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "Harry Potter and the Half-Blood Prince", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "Harry Potter and the Order of the Pheonix", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "Harry Potter and the Deathly Hallows", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "Harry Potter and the Cursed Child", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "Fantastic Beasts and Where to Find Them", genre: "Fantasy", author_id: 1, user_id: 1)
+Book.create(title: "It", genre: "Horror", author_id: 2, user_id: 1)
+Book.create(title: "The Shining", genre: "Horror", author_id: 2, user_id: 1)
+Book.create(title: "Salem's Lot", genre: "Horror", author_id: 2, user_id: 1)
+Book.create(title: "DA VINCI CODE", genre: "Drama", author_id: 3, user_id: 1)
+Book.create(title: "Angels and Demons", genre: "Drama", author_id: 3, user_id: 4)
+Book.create(title: "Inferno", genre: "Drama", author_id: 3, user_id: 1)
+Book.create(title: "Origin", genre: "Drama", author_id: 3, user_id: 1)
+Book.create(title: "The Lost Symbol", genre: "Drama", author_id: 3, user_id: 1)
+Book.create(title: "Twilight", genre: "Drama", author_id: 4, user_id: 1)
+Book.create(title: "Breaking Dawn", genre: "Drama", author_id: 4, user_id: 1)
+Book.create(title: "The Host", genre: "Drama", author_id: 4, user_id: 1)
+Book.create(title: "Eclipse", genre: "Drama", author_id: 4, user_id: 4)
+Book.create(title: "House of Earth and Blood", genre: "Fantasy", author_id: 5, user_id: 1)
+Book.create(title: "House of Sky and Breath", genre: "Fantasy", author_id: 5, user_id: 3)
+Book.create(title: "Crown of Midnight", genre: "Fantasy", author_id: 5, user_id: 1)
+Book.create(title: "Queen of Shadows", genre: "Fantasy", author_id: 5, user_id: 1)
+Book.create(title: "Empire of Storms", genre: "Fantasy", author_id: 5, user_id: 3)
+Book.create(title: "Kingdom of Ash", genre: "Fantasy", author_id: 5, user_id: 1)
+Book.create(title: "Oliver Twist", genre: "Historical Fiction", author_id: 6, user_id: 1)
+Book.create(title: "Hard Times", genre: "Historical Fiction", author_id: 6, user_id: 1)
+Book.create(title: "The Adventures of Tom Sawyer", genre: "Historical Fiction", author_id: 7, user_id: 1)
+Book.create(title: "Adventures of HuckleBerry Finn", genre: "Historical Fiction", author_id: 7, user_id: 1)
+Book.create(title: "The Mysterious Stranger", genre: "Historical Fiction", author_id: 7, user_id: 2)
+Book.create(title: "To Kill a Mockingbird", genre: "Historical Fiction", author_id: 8, user_id: 1)
+Book.create(title: "Invisible Man", genre: "Drama", author_id: 9, user_id: 4)
+Book.create(title: "Short History of Nearly Everything", genre: "Science", author_id: 10, user_id: 1)
+Book.create(title: "Notes from a Small Island", genre: "Travel", author_id: 10, user_id: 1)
+
+
+User.create(username: "admin", password: "password")
+User.create(username: "user1", password: "password")
+User.create(username: "user2", password: "password")
+User.create(username: "user3", password: "password")
 
 puts "✅ Done seeding!"
