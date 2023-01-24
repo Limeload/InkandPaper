@@ -3,14 +3,13 @@ import { Button, Checkbox, Form } from 'semantic-ui-react'
 import "./App.css"
 import logo from "../logo.png"
 
-function FormLogin() {
-    return (
-
+function FormLogin({users, setUsers}) {
+     return (
   <Form className='App-login'>
     <img src={logo} alt="logo" />
     <Form.Field>
       <label>Username</label>
-      <input placeholder='First Name' />
+      <input placeholder=' Username' />
     </Form.Field>
     <Form.Field>
       <label>Password</label>
