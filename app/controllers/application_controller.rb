@@ -22,6 +22,6 @@ class ApplicationController < Sinatra::Base
   post '/books' do
     newBook = Book.create(title:params[:title], author:params[:author], genre:params[:genre])
     newBook.to_json
-
+  end
 
 end
