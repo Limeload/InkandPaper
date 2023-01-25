@@ -1,19 +1,23 @@
 import React from "react";
-import "./App.css"
+import "./App.css";
 import FormLogin from "./FormLogin";
-import {useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import FormSignUp from "./FormSignUp";
+import Library from "./Library";
+import UserPage from "./UserPage";
 
 function App() {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
   useEffect(() => {
-        fetch("http://localhost:9292/users")
-          .then((res) => res.json())
-          .then((setUsers))
-      }, []);
+    fetch("http://localhost:9292/users")
+      .then((res) => res.json())
+      .then(setUsers);
+  }, []);
   return (
     <div className="App">
-   <FormLogin users={users} setUsers={setUsers} />
+      <FormLogin users={users} setUsers={setUsers} />
+      <UserPage />
+      <Library />
     </div>
   );
 }
