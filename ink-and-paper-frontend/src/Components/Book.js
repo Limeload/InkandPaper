@@ -1,11 +1,12 @@
 import React from "react";
-
+import "./App.css";
 function Book({ book }) {
   return (
     <div>
       <div class="content">
-        <h4>{book.title}</h4>
-        <h5>{book.genre}</h5>
+        <h4 class="book">
+          {book.title}- {book.genre}
+        </h4>
       </div>
       <div class="flap"></div>
     </div>

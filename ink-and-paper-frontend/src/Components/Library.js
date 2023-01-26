@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Book from "./Book";
+import UserPage from "./UserPage";
 
 function Library() {
   const [books, setBooks] = useState([]);
@@ -15,6 +16,7 @@ function Library() {
       {books.map((book) => (
         <Book book={book} key={book.id} />
       ))}
+      <UserPage books={books} setBooks={setBooks} />
     </div>
   );
 }

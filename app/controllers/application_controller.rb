@@ -20,7 +20,8 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/books' do
-    newBook = Book.create(title:params[:title], author:params[:author], genre:params[:genre])
+    author1 = Author.all.find_by(last_name: params[:author])
+    newBook = Book.create(title:params[:title], author_id:author1.id, genre:params[:genre], user_id:1)
     newBook.to_json
   end
 

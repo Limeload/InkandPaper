@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 
-function UserPage() {
+function UserPage({ books, setBooks }) {
   const [form, setForm] = useState({});
   let handleChange = (e) => {
     let name = e.target.name;
@@ -21,7 +21,7 @@ function UserPage() {
       body: JSON.stringify(form),
     })
       .then((resp) => resp.json())
-      .then((data) => console.log(data));
+      .then((data) => setBooks([data, ...books]));
   }
 
   return (
@@ -42,7 +42,7 @@ function UserPage() {
           />
         </Form.Field>
         <Form.Field>
-          <label>Author of your book</label>
+          <label>Author's last name</label>
           <input
             onChange={handleChange}
             name="author"
