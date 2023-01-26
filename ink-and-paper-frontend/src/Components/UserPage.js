@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
 
-function UserPage() {
+function UserPage({ books, setBooks }) {
   const [form, setForm] = useState({});
   let handleChange = (e) => {
     let name = e.target.name;
@@ -21,16 +21,11 @@ function UserPage() {
       body: JSON.stringify(form),
     })
       .then((resp) => resp.json())
-      .then((data) => setUsers([data, ...users]));
+      .then((data) => setBooks([data, ...books]));
   }
 
   return (
     <div>
-      <h1>Welcome {user.first_name}</h1>
-      <h2>Current Checkouts</h2>
-      {user.books.map((book) => (
-        <p>{book.title}</p>
-      ))}
       <h2>Donate a Book</h2>
       <Form onSubmit={handleSubmit} className="App-login">
         <Form.Field>
@@ -42,7 +37,7 @@ function UserPage() {
           />
         </Form.Field>
         <Form.Field>
-          <label>Author of your book</label>
+          <label>Author's last name</label>
           <input
             onChange={handleChange}
             name="author"
