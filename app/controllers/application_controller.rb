@@ -16,12 +16,12 @@ class ApplicationController < Sinatra::Base
 
   get '/books' do
     books = Book.all.order(:title)
-    books.to_json(include: :author)
+    books.to_json
   end
 
   post '/books' do
-    author1 = Author.all.find_by(last_name: params[:author])
-    newBook = Book.create(title:params[:title], author_id:author1.id, genre:params[:genre], user_id:1)
+    
+    newBook = Book.create(title:params[:title], author:params[:author], genre:params[:genre], user_id:1)
     newBook.to_json
   end
 
