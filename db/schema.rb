@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_23_161450) do
+ActiveRecord::Schema.define(version: 2023_01_26_225513) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "genre"
+    t.string "image_URL"
     t.string "author"
     t.integer "user_id"
   end
@@ -25,3 +26,4 @@ ActiveRecord::Schema.define(version: 2023_01_23_161450) do
   end
 
 end
+
