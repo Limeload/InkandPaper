@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Form } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
 
 function UserPage({ books, setBooks }) {
   const [form, setForm] = useState({});
@@ -26,6 +26,11 @@ function UserPage({ books, setBooks }) {
 
   return (
     <div>
+      {/* <h1>Welcome {user.first_name}</h1>
+      <h2>Current Checkouts</h2>
+      {user.books.map((book) => (
+        <p>{book.title}</p>
+      ))} */}
       <h2>Donate a Book</h2>
       <Form onSubmit={handleSubmit} className="App-login">
         <Form.Field>
