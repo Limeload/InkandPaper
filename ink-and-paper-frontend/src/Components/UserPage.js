@@ -25,7 +25,7 @@ function UserPage({ books, setBooks }) {
   }
 
   return (
-    <div>
+    <div className="App">
       {/* <h1>Welcome {user.first_name}</h1>
       <h2>Current Checkouts</h2>
       {user.books.map((book) => (

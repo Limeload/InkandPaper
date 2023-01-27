@@ -4,11 +4,23 @@ import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import FormLogin from "./Components/FormLogin";
+import Dashboard from "./Components/Dashboard";
+import UserPage from './Components/UserPage';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <BrowserRouter>
+      <Routes>
+        <Route index element={<App />} />
+        <Route path="FormLogin" element={<FormLogin />} />
+        <Route path="Dashboard" element={<Dashboard />} />
+        <Route path="UserPage" element={<UserPage />} />
+        </Routes>
+        </BrowserRouter>
   </React.StrictMode>
 );
 
