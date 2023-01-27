@@ -6,7 +6,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
 .App-login,
-h1 {
+h1, .dashboard {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   font-size: 6em;
@@ -20,3 +20,11 @@ h1 {
 .book {
   margin-top: 10px;
 }
+
+.dashboard {
+text-align: center;
+padding-top: 3em;
+font-size: x-large;
+background-color: #F4F1DE;
+}
+
