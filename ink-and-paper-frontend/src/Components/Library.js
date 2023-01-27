@@ -11,34 +11,22 @@ function Library() {
       .then((books) => setBooks(books));
   }, []);
 
-  const cards = books.map((book) => (
-    <Book book={book} key={book.id} />
-  ))
 
-//  function handleDeleteClick() {
-//     fetch(`http://localhost:9292/books/${book.id}`, {
-//       method: "DELETE",
-//     })
-//       .then((r) => r.json())
-//       .then(data => setBooks(data));
-//   }
+  function handleRemove(id) {
+    const newBook = books.filter((book) => book.id !== id);
+    setBooks(newBook);
+  }
 
-//   function handleSubmit(e) {
-//     e.preventDefault();
-//     fetch(`http://localhost:9292/books/${book.id}`, {
-//       method: "PATCH",
-//       headers: {
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify({
-//         user_id: user_id,
-//       }),
-//     })
-//       .then((r) => r.json())
-//       .then((data) => setBooks(data));
-//   }
+  function handleUpdate(updated) {
+    const updatedBook = books.map((book) => book.id === updated.id ? updated : book);
+    setBooks(updatedBook);
+  }
 
+const cards = books.map((book) => (
+  <Book book={book} handleRemove={handleRemove} onUpdate={handleUpdate} key={book.id} />
+))
   return (
+
     <div class="container">
 <Row xs={1} md={3} className="g-4">{cards}</Row>
     </div>
